@@ -1,24 +1,24 @@
 package Janken;
 
-
-import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class LogWriter {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		try {
-			FileWriter file = new FileWriter("/raiga/eclipse-workspace/Tramp/src/Janken/HandsFile.txt");
-			PrintWriter pw = new PrintWriter(new BufferedWriter(file));
+			File file = new File("C:\\Users\\raiga\\eclipse-workspace\\Tramp\\src\\Janken\\HandsFile.txt");
+			FileWriter pw = new FileWriter(file);
 			
-			pw.println("test0");
-			pw.println("test1");
+			pw.write("‚ ‚ ‚ ‚ ‚ ‚ ");
+			pw.write("test1");
+			
+			pw.flush();
 			
 			pw.close();
+			
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		//testtest
 	}
 }
